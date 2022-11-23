@@ -7,15 +7,16 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		3284FFD0275B033A0039F3EB /* Apollo in Frameworks */ = {isa = PBXBuildFile; productRef = 3284FFCF275B033A0039F3EB /* Apollo */; };
 		3284FFD2275B033A0039F3EB /* ApolloSQLite in Frameworks */ = {isa = PBXBuildFile; productRef = 3284FFD1275B033A0039F3EB /* ApolloSQLite */; };
 		3284FFDB275B0CF40039F3EB /* Movies.graphql.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3284FFD9275B0CF40039F3EB /* Movies.graphql.swift */; };
 		3289E021275AF6F90058C710 /* MovieChallengeApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3289E020275AF6F90058C710 /* MovieChallengeApp.swift */; };
 		3289E023275AF6F90058C710 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3289E022275AF6F90058C710 /* ContentView.swift */; };
 		3289E025275AF6FB0058C710 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 3289E024275AF6FB0058C710 /* Assets.xcassets */; };
-		3289E028275AF6FB0058C710 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 3289E027275AF6FB0058C710 /* Preview Assets.xcassets */; };
 		32DF5F31275AFB0E0016B534 /* Movies.graphql in Resources */ = {isa = PBXBuildFile; fileRef = 32DF5F30275AFB0E0016B534 /* Movies.graphql */; };
 		32DF5F33275AFB1B0016B534 /* Network.swift in Sources */ = {isa = PBXBuildFile; fileRef = 32DF5F32275AFB1B0016B534 /* Network.swift */; };
+		CA5233FE292E77AA0006E2EE /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = CA5233FD292E77AA0006E2EE /* Preview Assets.xcassets */; };
+		CA523401292E8E220006E2EE /* Apollo in Frameworks */ = {isa = PBXBuildFile; productRef = CA523400292E8E220006E2EE /* Apollo */; };
+		CA959060292E9CA400CFE391 /* TopMoviesQuery.graphql in Resources */ = {isa = PBXBuildFile; fileRef = CA95905F292E9CA400CFE391 /* TopMoviesQuery.graphql */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -24,9 +25,10 @@
 		3289E020275AF6F90058C710 /* MovieChallengeApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MovieChallengeApp.swift; sourceTree = "<group>"; };
 		3289E022275AF6F90058C710 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
 		3289E024275AF6FB0058C710 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
-		3289E027275AF6FB0058C710 /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
 		32DF5F30275AFB0E0016B534 /* Movies.graphql */ = {isa = PBXFileReference; lastKnownFileType = text; path = Movies.graphql; sourceTree = "<group>"; };
 		32DF5F32275AFB1B0016B534 /* Network.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Network.swift; sourceTree = "<group>"; };
+		CA5233FD292E77AA0006E2EE /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
+		CA95905F292E9CA400CFE391 /* TopMoviesQuery.graphql */ = {isa = PBXFileReference; lastKnownFileType = text; path = TopMoviesQuery.graphql; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -34,8 +36,8 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				3284FFD0275B033A0039F3EB /* Apollo in Frameworks */,
 				3284FFD2275B033A0039F3EB /* ApolloSQLite in Frameworks */,
+				CA523401292E8E220006E2EE /* Apollo in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -55,6 +57,7 @@
 			children = (
 				3289E01F275AF6F90058C710 /* Movie Challenge */,
 				3289E01E275AF6F90058C710 /* Products */,
+				CA5233FF292E8E220006E2EE /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -69,10 +72,10 @@
 		3289E01F275AF6F90058C710 /* Movie Challenge */ = {
 			isa = PBXGroup;
 			children = (
+				CA5233FB292E72670006E2EE /* GraphQL */,
 				3289E020275AF6F90058C710 /* MovieChallengeApp.swift */,
 				3284FFD8275B0CF40039F3EB /* Generated */,
 				3289E022275AF6F90058C710 /* ContentView.swift */,
-				32DF5F30275AFB0E0016B534 /* Movies.graphql */,
 				32DF5F32275AFB1B0016B534 /* Network.swift */,
 				3289E024275AF6FB0058C710 /* Assets.xcassets */,
 				3289E026275AF6FB0058C710 /* Preview Content */,
@@ -83,9 +86,33 @@
 		3289E026275AF6FB0058C710 /* Preview Content */ = {
 			isa = PBXGroup;
 			children = (
-				3289E027275AF6FB0058C710 /* Preview Assets.xcassets */,
+				CA5233FD292E77AA0006E2EE /* Preview Assets.xcassets */,
 			);
 			path = "Preview Content";
+			sourceTree = "<group>";
+		};
+		CA5233FB292E72670006E2EE /* GraphQL */ = {
+			isa = PBXGroup;
+			children = (
+				CA5233FC292E72800006E2EE /* Queries */,
+			);
+			path = GraphQL;
+			sourceTree = "<group>";
+		};
+		CA5233FC292E72800006E2EE /* Queries */ = {
+			isa = PBXGroup;
+			children = (
+				32DF5F30275AFB0E0016B534 /* Movies.graphql */,
+				CA95905F292E9CA400CFE391 /* TopMoviesQuery.graphql */,
+			);
+			path = Queries;
+			sourceTree = "<group>";
+		};
+		CA5233FF292E8E220006E2EE /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			name = Frameworks;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -106,8 +133,8 @@
 			);
 			name = "Movie Challenge";
 			packageProductDependencies = (
-				3284FFCF275B033A0039F3EB /* Apollo */,
 				3284FFD1275B033A0039F3EB /* ApolloSQLite */,
+				CA523400292E8E220006E2EE /* Apollo */,
 			);
 			productName = "SwiftUI Base";
 			productReference = 3289E01D275AF6F90058C710 /* Movie Challenge.app */;
@@ -155,8 +182,9 @@
 			buildActionMask = 2147483647;
 			files = (
 				32DF5F31275AFB0E0016B534 /* Movies.graphql in Resources */,
-				3289E028275AF6FB0058C710 /* Preview Assets.xcassets in Resources */,
+				CA5233FE292E77AA0006E2EE /* Preview Assets.xcassets in Resources */,
 				3289E025275AF6FB0058C710 /* Assets.xcassets in Resources */,
+				CA959060292E9CA400CFE391 /* TopMoviesQuery.graphql in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -179,7 +207,7 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
-			shellScript = "# Don't run this during index builds\nif [ $ACTION = \"indexbuild\" ]; then exit 0; fi\n\ncd ../ApolloCodegen\nxcrun -sdk macosx swift run ApolloCodegen generate\n";
+			shellScript = "# Don't run this during index builds\nif [ $ACTION = \"indexbuild\" ]; then exit 0; fi\n\ncd ../..\ncd ApolloCodegen\npwd\nxcrun -sdk macosx swift run ApolloCodegen generate\n";
 		};
 /* End PBXShellScriptBuildPhase section */
 
@@ -321,7 +349,7 @@
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
-				DEVELOPMENT_ASSET_PATHS = "\"MovieChallenge/Preview Content\"";
+				DEVELOPMENT_ASSET_PATHS = "Movie\\ Challenge/Preview\\ Content/Preview\\ Assets.xcassets";
 				DEVELOPMENT_TEAM = 59Q2VRCG46;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
@@ -350,7 +378,7 @@
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
-				DEVELOPMENT_ASSET_PATHS = "\"MovieChallenge/Preview Content\"";
+				DEVELOPMENT_ASSET_PATHS = "Movie\\ Challenge/Preview\\ Content/Preview\\ Assets.xcassets";
 				DEVELOPMENT_TEAM = 59Q2VRCG46;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
@@ -407,15 +435,15 @@
 /* End XCRemoteSwiftPackageReference section */
 
 /* Begin XCSwiftPackageProductDependency section */
-		3284FFCF275B033A0039F3EB /* Apollo */ = {
-			isa = XCSwiftPackageProductDependency;
-			package = 3284FFCE275B033A0039F3EB /* XCRemoteSwiftPackageReference "apollo-ios" */;
-			productName = Apollo;
-		};
 		3284FFD1275B033A0039F3EB /* ApolloSQLite */ = {
 			isa = XCSwiftPackageProductDependency;
 			package = 3284FFCE275B033A0039F3EB /* XCRemoteSwiftPackageReference "apollo-ios" */;
 			productName = ApolloSQLite;
+		};
+		CA523400292E8E220006E2EE /* Apollo */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 3284FFCE275B033A0039F3EB /* XCRemoteSwiftPackageReference "apollo-ios" */;
+			productName = Apollo;
 		};
 /* End XCSwiftPackageProductDependency section */
 	};

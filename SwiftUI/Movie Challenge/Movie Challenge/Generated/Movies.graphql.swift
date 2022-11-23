@@ -11,7 +11,11 @@ public final class GetMoviesQueryQuery: GraphQLQuery {
     query GetMoviesQuery {
       movies {
         __typename
+        id
         title
+        posterPath
+        voteAverage
+        popularity
       }
     }
     """
@@ -55,7 +59,11 @@ public final class GetMoviesQueryQuery: GraphQLQuery {
       public static var selections: [GraphQLSelection] {
         return [
           GraphQLField("__typename", type: .nonNull(.scalar(String.self))),
+          GraphQLField("id", type: .nonNull(.scalar(Int.self))),
           GraphQLField("title", type: .nonNull(.scalar(String.self))),
+          GraphQLField("posterPath", type: .scalar(String.self)),
+          GraphQLField("voteAverage", type: .nonNull(.scalar(Double.self))),
+          GraphQLField("popularity", type: .nonNull(.scalar(Double.self))),
         ]
       }
 
@@ -65,8 +73,8 @@ public final class GetMoviesQueryQuery: GraphQLQuery {
         self.resultMap = unsafeResultMap
       }
 
-      public init(title: String) {
-        self.init(unsafeResultMap: ["__typename": "Movie", "title": title])
+      public init(id: Int, title: String, posterPath: String? = nil, voteAverage: Double, popularity: Double) {
+        self.init(unsafeResultMap: ["__typename": "Movie", "id": id, "title": title, "posterPath": posterPath, "voteAverage": voteAverage, "popularity": popularity])
       }
 
       public var __typename: String {
@@ -78,12 +86,48 @@ public final class GetMoviesQueryQuery: GraphQLQuery {
         }
       }
 
+      public var id: Int {
+        get {
+          return resultMap["id"]! as! Int
+        }
+        set {
+          resultMap.updateValue(newValue, forKey: "id")
+        }
+      }
+
       public var title: String {
         get {
           return resultMap["title"]! as! String
         }
         set {
           resultMap.updateValue(newValue, forKey: "title")
+        }
+      }
+
+      public var posterPath: String? {
+        get {
+          return resultMap["posterPath"] as? String
+        }
+        set {
+          resultMap.updateValue(newValue, forKey: "posterPath")
+        }
+      }
+
+      public var voteAverage: Double {
+        get {
+          return resultMap["voteAverage"]! as! Double
+        }
+        set {
+          resultMap.updateValue(newValue, forKey: "voteAverage")
+        }
+      }
+
+      public var popularity: Double {
+        get {
+          return resultMap["popularity"]! as! Double
+        }
+        set {
+          resultMap.updateValue(newValue, forKey: "popularity")
         }
       }
     }

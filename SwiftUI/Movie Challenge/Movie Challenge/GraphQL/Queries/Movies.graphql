@@ -1,0 +1,9 @@
+query GetMoviesQuery {
+  movies {
+    id
+    title
+    posterPath
+    voteAverage
+    popularity
+  }
+}
