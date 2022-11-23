@@ -1,9 +1,7 @@
-query GetMoviesQuery {
+query GetMovies {
   movies {
     id
     title
     posterPath
-    voteAverage
-    popularity
   }
 }

@@ -4,21 +4,23 @@
 import Apollo
 import Foundation
 
-public final class GetMoviesQuery: GraphQLQuery {
+public final class TopMoviesQueryQuery: GraphQLQuery {
   /// The raw GraphQL definition of this operation.
   public let operationDefinition: String =
     """
-    query GetMovies {
-      movies {
+    query TopMoviesQuery {
+      movies(sort: DESC, orderBy: "voteAverage", limit: 5) {
         __typename
         id
         title
         posterPath
+        voteAverage
+        popularity
       }
     }
     """
 
-  public let operationName: String = "GetMovies"
+  public let operationName: String = "TopMoviesQuery"
 
   public init() {
   }
@@ -28,7 +30,7 @@ public final class GetMoviesQuery: GraphQLQuery {
 
     public static var selections: [GraphQLSelection] {
       return [
-        GraphQLField("movies", type: .list(.object(Movie.selections))),
+        GraphQLField("movies", arguments: ["sort": "DESC", "orderBy": "voteAverage", "limit": 5], type: .list(.object(Movie.selections))),
       ]
     }
 
@@ -60,6 +62,8 @@ public final class GetMoviesQuery: GraphQLQuery {
           GraphQLField("id", type: .nonNull(.scalar(Int.self))),
           GraphQLField("title", type: .nonNull(.scalar(String.self))),
           GraphQLField("posterPath", type: .scalar(String.self)),
+          GraphQLField("voteAverage", type: .nonNull(.scalar(Double.self))),
+          GraphQLField("popularity", type: .nonNull(.scalar(Double.self))),
         ]
       }
 
@@ -69,8 +73,8 @@ public final class GetMoviesQuery: GraphQLQuery {
         self.resultMap = unsafeResultMap
       }
 
-      public init(id: Int, title: String, posterPath: String? = nil) {
-        self.init(unsafeResultMap: ["__typename": "Movie", "id": id, "title": title, "posterPath": posterPath])
+      public init(id: Int, title: String, posterPath: String? = nil, voteAverage: Double, popularity: Double) {
+        self.init(unsafeResultMap: ["__typename": "Movie", "id": id, "title": title, "posterPath": posterPath, "voteAverage": voteAverage, "popularity": popularity])
       }
 
       public var __typename: String {
@@ -106,6 +110,24 @@ public final class GetMoviesQuery: GraphQLQuery {
         }
         set {
           resultMap.updateValue(newValue, forKey: "posterPath")
+        }
+      }
+
+      public var voteAverage: Double {
+        get {
+          return resultMap["voteAverage"]! as! Double
+        }
+        set {
+          resultMap.updateValue(newValue, forKey: "voteAverage")
+        }
+      }
+
+      public var popularity: Double {
+        get {
+          return resultMap["popularity"]! as! Double
+        }
+        set {
+          resultMap.updateValue(newValue, forKey: "popularity")
         }
       }
     }
