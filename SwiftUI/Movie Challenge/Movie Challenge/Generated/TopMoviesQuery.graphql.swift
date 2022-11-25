@@ -4,23 +4,22 @@
 import Apollo
 import Foundation
 
-public final class TopMoviesQueryQuery: GraphQLQuery {
+public final class TopMoviesQuery: GraphQLQuery {
   /// The raw GraphQL definition of this operation.
   public let operationDefinition: String =
     """
-    query TopMoviesQuery {
+    query TopMovies {
       movies(sort: DESC, orderBy: "voteAverage", limit: 5) {
         __typename
         id
         title
         posterPath
         voteAverage
-        popularity
       }
     }
     """
 
-  public let operationName: String = "TopMoviesQuery"
+  public let operationName: String = "TopMovies"
 
   public init() {
   }
@@ -63,7 +62,6 @@ public final class TopMoviesQueryQuery: GraphQLQuery {
           GraphQLField("title", type: .nonNull(.scalar(String.self))),
           GraphQLField("posterPath", type: .scalar(String.self)),
           GraphQLField("voteAverage", type: .nonNull(.scalar(Double.self))),
-          GraphQLField("popularity", type: .nonNull(.scalar(Double.self))),
         ]
       }
 
@@ -73,8 +71,8 @@ public final class TopMoviesQueryQuery: GraphQLQuery {
         self.resultMap = unsafeResultMap
       }
 
-      public init(id: Int, title: String, posterPath: String? = nil, voteAverage: Double, popularity: Double) {
-        self.init(unsafeResultMap: ["__typename": "Movie", "id": id, "title": title, "posterPath": posterPath, "voteAverage": voteAverage, "popularity": popularity])
+      public init(id: Int, title: String, posterPath: String? = nil, voteAverage: Double) {
+        self.init(unsafeResultMap: ["__typename": "Movie", "id": id, "title": title, "posterPath": posterPath, "voteAverage": voteAverage])
       }
 
       public var __typename: String {
@@ -119,15 +117,6 @@ public final class TopMoviesQueryQuery: GraphQLQuery {
         }
         set {
           resultMap.updateValue(newValue, forKey: "voteAverage")
-        }
-      }
-
-      public var popularity: Double {
-        get {
-          return resultMap["popularity"]! as! Double
-        }
-        set {
-          resultMap.updateValue(newValue, forKey: "popularity")
         }
       }
     }

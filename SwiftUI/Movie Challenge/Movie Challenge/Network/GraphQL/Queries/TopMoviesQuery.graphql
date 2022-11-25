@@ -1,9 +1,8 @@
-query TopMoviesQuery {
+query TopMovies {
   movies(sort: DESC, orderBy: "voteAverage", limit: 5) {
     id
     title
     posterPath
     voteAverage
-    popularity
   }
 }

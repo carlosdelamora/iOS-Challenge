@@ -1,4 +1,4 @@
-query GetMovies {
+query Movies {
   movies {
     id
     title
