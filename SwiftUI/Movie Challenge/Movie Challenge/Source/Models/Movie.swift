@@ -24,9 +24,9 @@ struct Movie: Identifiable {
     }
     
     // Convenience method to initalize a movie. Use this to mock data for example.
-    init(id: Int, title: String, posterPath: String) {
-        graphQLID = id
-        self.id = "\(id)"
+    init(id: String, graphQLID: Int, title: String, posterPath: String) {
+        self.id = id
+        self.graphQLID = graphQLID
         self.title = title
         self.posterPath = posterPath
     }

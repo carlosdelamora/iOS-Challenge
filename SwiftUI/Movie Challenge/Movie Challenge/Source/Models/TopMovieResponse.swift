@@ -15,6 +15,14 @@ struct TopMovieResponse: QueryDataRepresentable {
         guard let data = data as? TopMoviesQuery.Data else {
             throw DataRepresentableError.wrongQuery("argument data should be of type MoviesQuery.Data")
         }
-        self.movies = data.movies?.compactMap { TopMovie(topMovieDTO: $0) } ?? []
+        self.movies = data
+            .movies?
+            .filter( { $0 != nil })
+            .enumerated()
+            .compactMap { TopMovie(topMovieDTO: $0.1, position: $0.0) } ?? []
+    }
+    
+    init(movies: [TopMovie]) {
+        self.movies = movies
     }
 }

@@ -17,4 +17,8 @@ struct MoviesResponse: QueryDataRepresentable {
         }
         self.movies = data.movies?.compactMap { Movie(movieDTO: $0) } ?? []
     }
+    
+    init(movies: [Movie]) {
+        self.movies = movies
+    }
 }
