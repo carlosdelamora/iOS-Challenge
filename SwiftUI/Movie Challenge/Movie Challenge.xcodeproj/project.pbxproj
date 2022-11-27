@@ -45,6 +45,8 @@
 		CA9590A62933B7D600CFE391 /* GenereCard.swift in Sources */ = {isa = PBXBuildFile; fileRef = CA9590A52933B7D600CFE391 /* GenereCard.swift */; };
 		CA9590AD2933BF4900CFE391 /* ScaleEffectButonStyle.swift in Sources */ = {isa = PBXBuildFile; fileRef = CA9590AC2933BF4900CFE391 /* ScaleEffectButonStyle.swift */; };
 		CA9590AF2933C3E100CFE391 /* MoviesContainerViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = CA9590AE2933C3E100CFE391 /* MoviesContainerViewModel.swift */; };
+		CA9590B12933C67400CFE391 /* MoviesContainerData.swift in Sources */ = {isa = PBXBuildFile; fileRef = CA9590B02933C67400CFE391 /* MoviesContainerData.swift */; };
+		CA9590B32933C6BC00CFE391 /* GeneresResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = CA9590B22933C6BC00CFE391 /* GeneresResponse.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -84,6 +86,8 @@
 		CA9590A52933B7D600CFE391 /* GenereCard.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GenereCard.swift; sourceTree = "<group>"; };
 		CA9590AC2933BF4900CFE391 /* ScaleEffectButonStyle.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ScaleEffectButonStyle.swift; sourceTree = "<group>"; };
 		CA9590AE2933C3E100CFE391 /* MoviesContainerViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MoviesContainerViewModel.swift; sourceTree = "<group>"; };
+		CA9590B02933C67400CFE391 /* MoviesContainerData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MoviesContainerData.swift; sourceTree = "<group>"; };
+		CA9590B22933C6BC00CFE391 /* GeneresResponse.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GeneresResponse.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -199,8 +203,10 @@
 		CA95906F292EE32900CFE391 /* Models */ = {
 			isa = PBXGroup;
 			children = (
+				CA9590B02933C67400CFE391 /* MoviesContainerData.swift */,
 				CA959080293144C500CFE391 /* MoviesResponse.swift */,
 				CA95908429316DEF00CFE391 /* TopMovieResponse.swift */,
+				CA9590B22933C6BC00CFE391 /* GeneresResponse.swift */,
 				CA959072292EE3F300CFE391 /* Movie.swift */,
 				CA959074292EE7E500CFE391 /* TopMovie.swift */,
 			);
@@ -240,7 +246,7 @@
 			isa = PBXGroup;
 			children = (
 				CA95908A29317AF100CFE391 /* MoviesContainer.swift */,
-				CA9590A12933B16400CFE391 /* Generes */,
+				CA9590A12933B16400CFE391 /* Genres */,
 				CA9590862931794500CFE391 /* MoviesCollection */,
 				CA95909029318E5E00CFE391 /* TopMovies */,
 				CA9590AE2933C3E100CFE391 /* MoviesContainerViewModel.swift */,
@@ -277,13 +283,13 @@
 			path = Text;
 			sourceTree = "<group>";
 		};
-		CA9590A12933B16400CFE391 /* Generes */ = {
+		CA9590A12933B16400CFE391 /* Genres */ = {
 			isa = PBXGroup;
 			children = (
 				CA9590A22933B48A00CFE391 /* GeneresCollection.swift */,
 				CA9590A52933B7D600CFE391 /* GenereCard.swift */,
 			);
-			path = Generes;
+			path = Genres;
 			sourceTree = "<group>";
 		};
 		CA9590A72933BE7B00CFE391 /* Buttons */ = {
@@ -406,11 +412,13 @@
 				CA95909429318EB700CFE391 /* PreviewTopMoviesResponse.swift in Sources */,
 				CA959081293144C500CFE391 /* MoviesResponse.swift in Sources */,
 				CA959075292EE7E500CFE391 /* TopMovie.swift in Sources */,
+				CA9590B32933C6BC00CFE391 /* GeneresResponse.swift in Sources */,
 				CA95909629319C4D00CFE391 /* TopMovieCard.swift in Sources */,
 				CA9590A02932C4E200CFE391 /* TypeStyles.swift in Sources */,
 				CA95906C292EDE7500CFE391 /* Container+Extensions.swift in Sources */,
 				CA959066292ECA7D00CFE391 /* Genres.graphql.swift in Sources */,
 				CA95909E2932C4E200CFE391 /* StyledTexts.swift in Sources */,
+				CA9590B12933C67400CFE391 /* MoviesContainerData.swift in Sources */,
 				CA9590AF2933C3E100CFE391 /* MoviesContainerViewModel.swift in Sources */,
 				CA95908529316DEF00CFE391 /* TopMovieResponse.swift in Sources */,
 				CA95908D29317C0C00CFE391 /* MovieCard.swift in Sources */,
