@@ -4,7 +4,7 @@ import SwiftUI
 struct MovieChallengeApp: App {
   var body: some Scene {
     WindowGroup {
-      ContentView()
+      MoviesContainerView()
     }
   }
 }

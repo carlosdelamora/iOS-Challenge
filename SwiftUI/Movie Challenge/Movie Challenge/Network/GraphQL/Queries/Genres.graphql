@@ -1,5 +1,5 @@
 
-query Generes {
+query Genres {
   genres
 }
 

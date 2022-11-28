@@ -1,7 +1,20 @@
-query Movies {
-  movies {
+query Movies($genre: String, $sort: Sort, $orderBy: String, $limit: Int) {
+  movies(genre:$genre, sort: $sort, orderBy: $orderBy, limit: $limit) {
     id
     title
+    genres
     posterPath
+    releaseDate
+    voteAverage
+    popularity
+    overview
+    director {
+      name
+    }
+    cast {
+      name
+      profilePath
+      order
+    }
   }
 }

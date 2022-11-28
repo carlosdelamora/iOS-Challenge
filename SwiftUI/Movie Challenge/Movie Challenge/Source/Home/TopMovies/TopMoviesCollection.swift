@@ -10,12 +10,15 @@ import SwiftUI
 struct TopMoviesCollection: View {
     
     var topMoviesResponse: TopMovieResponse
+    @EnvironmentObject var moviesContainerViewModel: MoviesContainerViewModel
     
     var body: some View {
         ScrollView([.horizontal]) {
             LazyHStack(spacing: 20) {
                 ForEach(topMoviesResponse.movies, id: \.id) { topMovie in
-                    TopMovieCard(topMovie: topMovie, padding: 20)
+                    TopMovieCell(topMovie: topMovie, padding: 20) {
+                        
+                    }
                 }
             }
             .padding(20)
@@ -25,6 +28,7 @@ struct TopMoviesCollection: View {
 }
 
 struct TopMoviesCollection_Previews: PreviewProvider {
+    
     static var previews: some View {
         TopMoviesCollection(
             topMoviesResponse: PreviewTopMoviesResponse.response

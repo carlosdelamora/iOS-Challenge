@@ -31,6 +31,7 @@ struct MovieCard: View {
         .clipShape(
             RoundedRectangle(cornerRadius: 10, style: .continuous)
         )
+        
     }
 }
 

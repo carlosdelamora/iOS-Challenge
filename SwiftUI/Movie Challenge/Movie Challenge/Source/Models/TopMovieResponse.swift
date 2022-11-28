@@ -12,7 +12,7 @@ struct TopMovieResponse: QueryDataRepresentable {
     var movies: [TopMovie]
     
     init(data: GraphQLSelectionSet) throws {
-        guard let data = data as? TopMoviesQuery.Data else {
+        guard let data = data as? MoviesQuery.Data else {
             throw DataRepresentableError.wrongQuery("argument data should be of type MoviesQuery.Data")
         }
         self.movies = data

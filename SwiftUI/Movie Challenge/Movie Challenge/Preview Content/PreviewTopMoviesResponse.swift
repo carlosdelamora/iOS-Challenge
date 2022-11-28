@@ -14,15 +14,10 @@ struct PreviewTopMoviesResponse {
         let title = "Life in a Year"
         var movies = [TopMovie]()
         for i in 0..<5 {
-            let movie = TopMovie(
-                id: UUID().uuidString,
-                graphQLID: i,
-                title: title,
-                posterPath: moviePath,
-                voteAverage: String(Double(10) - Double(i)*0.3),
-                position: i
-            )
-            movies.append(movie)
+            var movie = PreviewMovie.movie
+            movie.id = UUID().uuidString
+            let topMovie = TopMovie(movie: movie, position: i)
+            movies.append(topMovie)
         }
         return TopMovieResponse(movies: movies)
     }

@@ -4,16 +4,16 @@
 import Apollo
 import Foundation
 
-public final class GeneresQuery: GraphQLQuery {
+public final class GenresQuery: GraphQLQuery {
   /// The raw GraphQL definition of this operation.
   public let operationDefinition: String =
     """
-    query Generes {
+    query Genres {
       genres
     }
     """
 
-  public let operationName: String = "Generes"
+  public let operationName: String = "Genres"
 
   public init() {
   }

@@ -1,5 +1,5 @@
 //
-//  MoviesCollection.swift
+//  HorizontalMoviesCollection.swift
 //  Movie Challenge
 //
 //  Created by Carlos De la mora on 11/25/22.
@@ -7,7 +7,7 @@
 
 import SwiftUI
 
-struct MoviesCollection: View {
+struct HorizontalMoviesCollection: View {
     
     var moviesResponse: MoviesResponse
 
@@ -15,11 +15,7 @@ struct MoviesCollection: View {
         ScrollView([.horizontal]) {
             LazyHStack(spacing: 20) {
                 ForEach(moviesResponse.movies, id: \.id) { movie in
-                    if let path = movie.posterPath {
-                        MovieCard(path: path)
-                    } else {
-                        EmptyView()
-                    }
+                    MovieCell(movie: movie)
                 }
             }
             .padding(20)
@@ -30,7 +26,7 @@ struct MoviesCollection: View {
 
 struct MoviesCollection_Previews: PreviewProvider {
     static var previews: some View {
-        MoviesCollection(
+        HorizontalMoviesCollection(
             moviesResponse: PreviewMoviesResponse.response
         )
         .frame(height: 200)

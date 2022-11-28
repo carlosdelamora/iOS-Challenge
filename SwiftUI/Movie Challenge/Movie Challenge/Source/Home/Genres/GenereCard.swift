@@ -8,30 +8,39 @@
 import SwiftUI
 
 struct GenereCard: View {
-    var text: String
+    
+    //MARK: - API
+    
+    init(category: BrowseCategory) {
+        self.category = category
+    }
+    
+    //MARK: - Constants
+    
+    let category: BrowseCategory
+    
+    //MARK: - Variables
+    
+    // MARK: - Body
     
     var body: some View {
-        Button {
-            print("Genere" + text + "tapped")
-        } label: {
-            BodyLargeSemibold(text)
-                .frame(maxWidth: .infinity, maxHeight: .infinity)
-                .background {
-                    LinearGradient(
-                        gradient: Gradient(colors: [.blue, .black, .blue]), startPoint: .bottomLeading, endPoint: .topTrailing)
-                }
-                .aspectRatio(1, contentMode: .fit)
-                .clipShape(
-                    RoundedRectangle(cornerRadius: 16, style: .continuous)
-                )
-        }
-        .scaleEffectButtonStyle()
+        BodyLargeSemibold(category.displayText)
+            .frame(maxWidth: .infinity, maxHeight: .infinity)
+            .background {
+                LinearGradient(
+                    gradient: Gradient(colors: [.blue, .black,.black, .blue]), startPoint: .bottomLeading, endPoint: .topTrailing)
+            }
+            .aspectRatio(1, contentMode: .fit)
+            .clipShape(
+                RoundedRectangle(cornerRadius: 16, style: .continuous)
+            )
+        
     }
 }
 
 struct GenereCard_Previews: PreviewProvider {
     static var previews: some View {
-        GenereCard(text: "Browse All")
+        GenereCard(category: .all)
             .frame(width: 180, height: 180)
     }
 }

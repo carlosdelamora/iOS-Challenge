@@ -9,31 +9,23 @@ import Foundation
 
 struct TopMovie {
     // id to conform with identifiable
-    var id: String
+    var id: String {
+        return movie.id
+    }
     // id coming from the backend. 
-    var graphQLID: Int 
-    var title: String
-    var posterPath: String?
-    var voteAverage: String
+    var movie: Movie
     var position: Int
     
-    init?(topMovieDTO: TopMoviesQuery.Data.Movie?, position: Int) {
+    init?(topMovieDTO: MoviesQuery.Data.Movie?, position: Int) {
         guard let topMovieDTO else { return nil }
-        id = "\(topMovieDTO.id)"
-        graphQLID = topMovieDTO.id
-        title = topMovieDTO.title
-        posterPath = topMovieDTO.posterPath
-        voteAverage = String(round(topMovieDTO.voteAverage*10)/10)
+        guard let movie = Movie(movieDTO: topMovieDTO) else { return nil }
+        self.movie = movie
         self.position = position
     }
     
     // Convenience method to initalize a movie. Use this to mock data for example.
-    init(id: String, graphQLID: Int, title: String, posterPath: String? = nil, voteAverage: String, position: Int) {
-        self.id = id
-        self.graphQLID = graphQLID
-        self.title = title
-        self.posterPath = posterPath
-        self.voteAverage = voteAverage
+    init(movie: Movie, position: Int) {
+        self.movie = movie
         self.position = position
     }
 }

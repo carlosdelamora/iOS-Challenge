@@ -9,4 +9,5 @@ import Factory
 
 extension Container {
     static let network = Factory(scope: .singleton) { Network.shared }
+    static let dataAccessProvider = Factory(scope: .shared) { DefaultDataAccessProvider() as DataAccessProvider }
 }
