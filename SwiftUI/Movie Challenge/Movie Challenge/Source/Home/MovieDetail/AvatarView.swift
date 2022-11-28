@@ -44,7 +44,7 @@ struct AvatarView: View {
                 RoundedRectangle(cornerRadius: 10, style: .continuous)
                     .stroke(Color.white, lineWidth: 2)
             }
-            BodyLargeSemibold(actor.name)
+            BodyMediumSemibold(actor.name)
         }
     }
 }

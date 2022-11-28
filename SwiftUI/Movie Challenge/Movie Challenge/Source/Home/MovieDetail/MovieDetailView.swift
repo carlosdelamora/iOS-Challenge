@@ -13,6 +13,7 @@ struct MovieDetailView: View {
         ScrollView(showsIndicators: false) {
             VStack(alignment: .leading) {
                 MovieCard(path: movie.posterPath)
+                    .padding(.horizontal)
                 BodyLargeBold(movie.title)
                     .frame(maxWidth: .infinity)
                     .padding()
@@ -23,6 +24,7 @@ struct MovieDetailView: View {
                         .padding(.bottom, 10)
                     BodyMediumSemibold(movie.overview)
                 }
+                .padding(.horizontal)
                 .padding(.bottom, 10)
                 CastView(actors: movie.cast)
             }

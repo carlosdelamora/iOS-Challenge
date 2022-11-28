@@ -18,6 +18,7 @@ struct CastView: View {
                         AvatarView(actor: movieActor)
                     }
                 }
+                .padding()
             }
         }
         .background(Color.background)

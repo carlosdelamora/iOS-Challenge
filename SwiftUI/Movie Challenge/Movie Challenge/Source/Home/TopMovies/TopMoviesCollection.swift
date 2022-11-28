@@ -15,9 +15,7 @@ struct TopMoviesCollection: View {
         ScrollView([.horizontal], showsIndicators: false) {
             LazyHStack(spacing: 20) {
                 ForEach(topMoviesResponse.movies, id: \.id) { topMovie in
-                    TopMovieCell(topMovie: topMovie, padding: 20) {
-                        
-                    }
+                    TopMovieCell(topMovie: topMovie, padding: 20)
                 }
             }
             .padding(20)
