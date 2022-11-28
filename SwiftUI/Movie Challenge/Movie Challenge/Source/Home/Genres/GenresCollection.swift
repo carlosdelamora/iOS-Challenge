@@ -21,7 +21,7 @@ struct GenresCollection: View {
     //MARK: - Body
     
     var body: some View {
-        ScrollView([.horizontal]) {
+        ScrollView([.horizontal], showsIndicators: false) {
             HStack(spacing: 20) {
                 ForEach(browseCategories.categories, id: \.id) { category in
                     NavigationLink(

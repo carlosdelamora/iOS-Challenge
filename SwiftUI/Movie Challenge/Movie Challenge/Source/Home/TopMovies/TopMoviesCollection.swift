@@ -13,7 +13,7 @@ struct TopMoviesCollection: View {
     @EnvironmentObject var moviesContainerViewModel: MoviesContainerViewModel
     
     var body: some View {
-        ScrollView([.horizontal]) {
+        ScrollView([.horizontal], showsIndicators: false) {
             LazyHStack(spacing: 20) {
                 ForEach(topMoviesResponse.movies, id: \.id) { topMovie in
                     TopMovieCell(topMovie: topMovie, padding: 20) {
@@ -23,7 +23,7 @@ struct TopMoviesCollection: View {
             }
             .padding(20)
         }
-        .background(Color.black)
+        .background(Color.background)
     }
 }
 

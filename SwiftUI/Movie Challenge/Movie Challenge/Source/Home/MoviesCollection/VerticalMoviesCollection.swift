@@ -27,7 +27,7 @@ struct VerticalMoviesCollection: View {
     //MARK: - Body
     
     var body: some View {
-        ScrollView {
+        ScrollView(showsIndicators: false) {
             LazyVStack(pinnedViews: [.sectionHeaders]) {
                 Section(header: headerView) {
                     ForEach(viewModel.data.movies, id: \.id) { movie in
@@ -41,7 +41,7 @@ struct VerticalMoviesCollection: View {
                 }
             }
         }
-        .background(Color.black)
+        .background(Color.background)
         .task {
             await viewModel.viewWillAppear()
         }

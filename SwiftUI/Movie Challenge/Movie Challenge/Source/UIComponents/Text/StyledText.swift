@@ -38,6 +38,6 @@ struct StyledText_Previews: PreviewProvider {
             StyledText("BodyLargeBold", typeStyle: TypeStyles.bodyLargeBold)
             StyledText("BodyLargeSemibold", typeStyle: TypeStyles.bodyLargeSemibold)
         }
-        .background(Color.black)
+        .background(Color.background)
     }
 }

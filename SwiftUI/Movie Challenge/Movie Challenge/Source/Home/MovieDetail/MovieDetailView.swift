@@ -10,7 +10,7 @@ import SwiftUI
 struct MovieDetailView: View {
     var movie: Movie
     var body: some View {
-        ScrollView {
+        ScrollView(showsIndicators: false) {
             VStack(alignment: .leading) {
                 MovieCard(path: movie.posterPath)
                 BodyLargeBold(movie.title)
@@ -24,7 +24,7 @@ struct MovieDetailView: View {
                 }
             }
         }
-        .background(Color.black)
+        .background(Color.background)
     }
 }
 

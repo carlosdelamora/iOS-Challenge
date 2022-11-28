@@ -12,7 +12,7 @@ struct HorizontalMoviesCollection: View {
     var moviesResponse: MoviesResponse
 
     var body: some View {
-        ScrollView([.horizontal]) {
+        ScrollView([.horizontal], showsIndicators: false) {
             LazyHStack(spacing: 20) {
                 ForEach(moviesResponse.movies, id: \.id) { movie in
                     MovieCell(movie: movie)
@@ -20,7 +20,7 @@ struct HorizontalMoviesCollection: View {
             }
             .padding(20)
         }
-        .background(Color.black)
+        .background(Color.background)
     }
 }
 

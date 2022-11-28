@@ -28,7 +28,7 @@ struct GenereCard: View {
             .frame(maxWidth: .infinity, maxHeight: .infinity)
             .background {
                 LinearGradient(
-                    gradient: Gradient(colors: [.blue, .black,.black, .blue]), startPoint: .bottomLeading, endPoint: .topTrailing)
+                    gradient: Gradient(colors: [.blue, .background,.background, .blue]), startPoint: .bottomLeading, endPoint: .topTrailing)
             }
             .aspectRatio(1, contentMode: .fit)
             .clipShape(

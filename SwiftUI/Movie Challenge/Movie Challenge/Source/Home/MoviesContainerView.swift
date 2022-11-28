@@ -41,7 +41,7 @@ struct MoviesContainerView: View {
                         .frame(height: collectionsHeight)
                 }
             }
-            .background(Color.black)
+            .background(Color.background)
             .task {
                 await viewModel.viewWillAppear()
             }
