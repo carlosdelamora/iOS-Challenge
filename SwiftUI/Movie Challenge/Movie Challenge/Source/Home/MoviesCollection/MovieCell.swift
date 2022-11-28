@@ -16,17 +16,17 @@ struct MovieCell: View {
     //MARK: - Variables
     
     var movie: Movie
+    @EnvironmentObject private var viewModel: MoviesContainerViewModel
     
     //MARK: - Body
     
     var body: some View {
         Button {
-            print("Movie selected")
+            viewModel.didSelect(movie: movie)
         } label: {
             MovieCard(path: movie.posterPath)
         }
         .scaleEffectButtonStyle()
-        
     }
 }
 

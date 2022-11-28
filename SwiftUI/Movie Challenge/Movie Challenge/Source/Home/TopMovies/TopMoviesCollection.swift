@@ -10,7 +10,6 @@ import SwiftUI
 struct TopMoviesCollection: View {
     
     var topMoviesResponse: TopMovieResponse
-    @EnvironmentObject var moviesContainerViewModel: MoviesContainerViewModel
     
     var body: some View {
         ScrollView([.horizontal], showsIndicators: false) {

@@ -16,6 +16,7 @@ class MoviesContainerViewModel: ObservableObject {
     //MARK: - API
     
     @Published var data = MoviesContainerData()
+    @Published var selectedMovie: Movie?
 
 
     func viewWillAppear() async {
@@ -28,6 +29,9 @@ class MoviesContainerViewModel: ObservableObject {
             genresResponse: genresResponse)
     }
     
+    func didSelect(movie: Movie) {
+        selectedMovie = movie
+    }
     
     //MARK: - Constants
     

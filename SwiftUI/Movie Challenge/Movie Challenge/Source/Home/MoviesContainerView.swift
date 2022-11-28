@@ -34,16 +34,19 @@ struct MoviesContainerView: View {
                         .padding(.leading, 16)
                     GenresCollection(browseCategories: viewModel.data.browseCategories)
                         .frame(height: collectionsHeight)
-                        .environmentObject(viewModel)
                     BodyLargeBold("Browse All")
                         .padding(.leading, 16)
                     HorizontalMoviesCollection(moviesResponse: viewModel.data.moviesResponse)
                         .frame(height: collectionsHeight)
                 }
+                .environmentObject(viewModel)
             }
             .background(Color.background)
             .task {
                 await viewModel.viewWillAppear()
+            }
+            .sheet(item: $viewModel.selectedMovie) { movie in
+                MovieDetailView(movie: movie)
             }
         }
     }

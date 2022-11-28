@@ -11,24 +11,20 @@ struct TopMovieCell: View {
     
     //MARK: - API
     
-    init(topMovie: TopMovie, padding: CGFloat, action: @escaping () -> Void) {
-        self.topMovie = topMovie
-        self.padding = padding
-        self.action = action
-    }
-    
     //MARK: - Constants
     
-    private let topMovie: TopMovie
-    private let padding: CGFloat
-    private let action: () -> Void
+    let topMovie: TopMovie
+    let padding: CGFloat
+    @EnvironmentObject private var viewModel: MoviesContainerViewModel
     
     //MARK: - Variables
     
     //MARK: - Body
     
     var body: some View {
-        Button(action: action) {
+        Button{
+            viewModel.didSelect(movie: topMovie.movie)
+        } label: {
             TopMovieCard(topMovie: topMovie, padding: padding)
         }
         .scaleEffectButtonStyle()
@@ -41,8 +37,8 @@ struct TopMovieCell_Previews: PreviewProvider {
     }
     static var previews: some View {
         HStack {
-            TopMovieCell(topMovie: topMovie1, padding: 20){}
-            TopMovieCell(topMovie: topMovie1, padding: 20){}
+            TopMovieCell(topMovie: topMovie1, padding: 20)
+            TopMovieCell(topMovie: topMovie1, padding: 20)
         }
         .frame(height: 180)
         .padding()

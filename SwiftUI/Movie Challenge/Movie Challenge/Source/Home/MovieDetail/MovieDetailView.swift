@@ -17,11 +17,14 @@ struct MovieDetailView: View {
                     .frame(maxWidth: .infinity)
                     .padding()
                 VStack(alignment: .leading) {
+                    BodyMediumSemibold("Director: \(movie.director)")
                     BodyMediumSemibold("Release Year: \(movie.releaseDate)")
                     BodyMediumSemibold("Vote average: \(movie.voteAverage)")
                         .padding(.bottom, 10)
                     BodyMediumSemibold(movie.overview)
                 }
+                .padding(.bottom, 10)
+                CastView(actors: movie.cast)
             }
         }
         .background(Color.background)

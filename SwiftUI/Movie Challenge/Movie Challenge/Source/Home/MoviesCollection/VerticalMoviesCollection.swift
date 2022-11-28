@@ -40,6 +40,7 @@ struct VerticalMoviesCollection: View {
                     }
                 }
             }
+            .padding()
         }
         .background(Color.background)
         .task {

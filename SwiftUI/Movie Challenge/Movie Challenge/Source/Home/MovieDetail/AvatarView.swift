@@ -52,6 +52,6 @@ struct AvatarView: View {
 struct AvatarView_Previews: PreviewProvider {
     static var previews: some View {
         let actor = Movie.Actor(name: "Bruce Willis", profilePath: "https://image.tmdb.org/t/p/w300_and_h450_bestv2/dIK5wftjG8XZaCv5xyojB2Gd8dg.jpg", order: 1)
-        return AvatarView(actor: actor)
+        return AvatarView(actor: actor).background(Color.background)
     }
 }

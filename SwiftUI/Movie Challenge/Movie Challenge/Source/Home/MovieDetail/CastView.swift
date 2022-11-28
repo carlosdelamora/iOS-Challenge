@@ -10,13 +10,17 @@ import SwiftUI
 struct CastView: View {
     var actors: [Movie.Actor]
     var body: some View {
-        ScrollView(.horizontal, showsIndicators: false) {
-            HStack {
-                ForEach(actors, id: \.order) { movieActor in
-                    AvatarView(actor: movieActor)
+        VStack {
+            BodyMediumSemibold("Cast")
+            ScrollView(.horizontal, showsIndicators: false) {
+                HStack {
+                    ForEach(actors, id: \.order) { movieActor in
+                        AvatarView(actor: movieActor)
+                    }
                 }
             }
         }
+        .background(Color.background)
     }
 }
 
